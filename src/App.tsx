@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,22 +32,57 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Loading from './components/Loading';
+import Auth from "./apps/auth"
+import Organization from "./apps/organization"
+import Volunteer from "./apps/volunteer"
+import React, { useEffect, useState } from 'react';
+import LocalStorage from './helpers/storage';
+
+const Apps: any={
+  "auth": <Auth key={"auth"}/>,
+  "organization": <Organization key={"organization"}/>,
+  "volunteer": <Volunteer key={"volunteer"}/>
+}
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App = () => {
+  
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  const [currentApp, setCurrentApp]= React.useState(<Auth/>)
+  useEffect(()=>{
+    // Gets Current app and stores
+    const app = LocalStorage.getApp()
+    console.log(app)
+    setCurrentApp(Apps[app])
+    window.document.title=`ConekDem`
+    // An event listener that is invoked from one app to another
+    // so as to switch apps
+    document.addEventListener("changeApp", ()=>{
+      const app= LocalStorage.getApp()
+      setCurrentApp(Apps[app])
+      location.assign('/')
+    })
+
+    return ()=>{
+      document.removeEventListener('changeApp', ()=>{})
+    }
+  },[])
+  return (
+    <>
+   
+  
+      {currentApp}
+   
+    </>
+  );
+}
 
 export default App;

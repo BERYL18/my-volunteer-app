@@ -1,0 +1,16 @@
+node_modules
+package-lock.json
+public
+tsconfig.json
+README.md 
+*.d.ts
+build
+dist
+.vscode
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+.gitignore
+.prettierignore
+.eslintignore
+.stylelintignore

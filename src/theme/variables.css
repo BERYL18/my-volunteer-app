@@ -1,2 +1,313 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+:root {
+  --ion-color-new: #00b8d4;
+  --ion-color-new-rgb: 0, 184, 212;
+  --ion-color-new-contrast: #000000;
+  --ion-color-new-contrast-rgb: 0, 0, 0;
+  --ion-color-new-shade: #00a2bb;
+  --ion-color-new-tint: #1abfd8;
+
+  --ion-color-orange: #ffae42;
+  --ion-color-orange-rgb: 255, 174, 66;
+  --ion-color-orange-contrast: #000000;
+  --ion-color-orange-contrast-rgb: 0, 0, 0;
+  --ion-color-orange-shade: #e0993a;
+  --ion-color-orange-tint: #ffb655;
+
+  --ion-color-back: #d2f3f4;
+  --ion-color-back-rgb: 210, 243, 244;
+  --ion-color-back-contrast: #000000;
+  --ion-color-back-contrast-rgb: 0, 0, 0;
+  --ion-color-back-shade: #b9d6d7;
+  --ion-color-back-tint: #d7f4f5;
+
+  --ion-background-color: initial;
+  --ion-text-color: initial;
+
+  --ion-color-primary-contrast: #ffffff;
+  --ion-button-color: #ffffff;
+
+  --ion-item-background: transparent;
+  --ion-item-color: inherit;
+
+  --ion-color-back2: #e2f8e9;
+  --ion-color-back2-rgb: 226, 248, 233;
+  --ion-color-back2-contrast: #000000;
+  --ion-color-back2-contrast-rgb: 0, 0, 0;
+  --ion-color-back2-shade: #c7dacd;
+  --ion-color-back2-tint: #e5f9eb;
+
+  --ion-color-back3: #fbeecb;
+  --ion-color-back3-rgb: 251, 238, 203;
+  --ion-color-back3-contrast: #000000;
+  --ion-color-back3-contrast-rgb: 0, 0, 0;
+  --ion-color-back3-shade: #ddd1b3;
+  --ion-color-back3-tint: #fbf0d0;
+
+  --ion-color-option-text: #fff;
+  
+  }
+
+
+ion-searchbar.custom {
+    --background: #afdbe25e;
+    --color: #fff;
+    --placeholder-color: #fff;
+    --icon-color: #fff;
+    --clear-button-color: #fff;
+  
+    --border-radius: 10px;
+}   
+ion-searchbar.ios.custom {
+  --cancel-button-color: #b3e7ccae;
+}
+
+ion-searchbar.md.custom {
+  --cancel-button-color: #fff;
+}
+.ion-color-back3 {
+  --ion-color-base: var(--ion-color-back3);
+  --ion-color-base-rgb: var(--ion-color-back3-rgb);
+  --ion-color-contrast: var(--ion-color-back3-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-back3-contrast-rgb);
+  --ion-color-shade: var(--ion-color-back3-shade);
+  --ion-color-tint: var(--ion-color-back3-tint);
+}
+
+.ion-color-back2 {
+  --ion-color-base: var(--ion-color-back2);
+  --ion-color-base-rgb: var(--ion-color-back2-rgb);
+  --ion-color-contrast: var(--ion-color-back2-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-back2-contrast-rgb);
+  --ion-color-shade: var(--ion-color-back2-shade);
+  --ion-color-tint: var(--ion-color-back2-tint);
+}
+.ion-color-back {
+  --ion-color-base: var(--ion-color-back);
+  --ion-color-base-rgb: var(--ion-color-back-rgb);
+  --ion-color-contrast: var(--ion-color-back-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-back-contrast-rgb);
+  --ion-color-shade: var(--ion-color-back-shade);
+  --ion-color-tint: var(--ion-color-back-tint);
+}
+
+.ion-color-orange {
+  --ion-color-base: var(--ion-color-orange);
+  --ion-color-base-rgb: var(--ion-color-orange-rgb);
+  --ion-color-contrast: var(--ion-color-orange-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-orange-contrast-rgb);
+  --ion-color-shade: var(--ion-color-orange-shade);
+  --ion-color-tint: var(--ion-color-orange-tint);
+}
+
+.ion-color-new {
+  --ion-color-base: var(--ion-color-new);
+  --ion-color-base-rgb: var(--ion-color-new-rgb);
+  --ion-color-contrast: var(--ion-color-new-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb);
+  --ion-color-shade: var(--ion-color-new-shade);
+  --ion-color-tint: var(--ion-color-new-tint);
+}
+
+
+
+ion-button {
+  text-align: center;
+  text-transform: initial;
+  padding: 20px;
+  font-size: 15px;
+}
+ion-title {
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ion-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.1cap;
+  font-size: 18px;
+}
+
+ion-content{
+  overflow-y: scroll;
+}
+ion-card-subtitle {
+  text-align: center;
+  text-transform: initial;
+  padding: 20px;
+  font-size: 22px;
+}
+ion-card {
+  box-shadow: 0 4px 8px 0 rgba(196, 194, 194, 0.2),
+    0 6px 20px 0 rgba(230, 229, 229, 0.19);
+   
+}
+ ion-header{
+  box-shadow: none !important;
+  height: 180px;
+  width: 100%;
+  position:fixed;
+  display: grid;
+  justify-self: space-between;
+  padding: 20px;
+  background-color: #ffc409;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  
+  
+}
+
+
+.flex_space_between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.flex_space_between ion-button {
+  margin-top: 5px;
+  margin-left: 5px;
+  height: 6rem;
+  font-weight: bolder;
+  font-size: large;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.logo_img {
+  height: 300px !important;
+  width: 300px !important;
+  margin-left: 30px;
+}
+
+.sign_top {
+  height: 250px;
+  width: 280px;
+  background-color: #ffc409;
+  border-top: 100%;
+  border-bottom-right-radius: 100%;
+  overflow: hidden;
+}
+
+
+.sign_top ion-text {
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+.sigup_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding-top: 30px;
+}
+.sigup_form ion-item {
+  margin-top: 20px;
+  height: 5rem;
+}
+.sigup_form ion-card {
+  width: 80%;
+  position: relative;
+}
+
+.img_and_logo {
+  margin: 30px;
+}
+.img_and_logo ion-thumbnail{
+    
+    height: 100px;
+    width: 100px;
+    
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.img_and_logo ion-text{
+    
+    font-size: 30px;
+  font-weight: bolder;
+}
+.page_header{
+
+  display: grid;
+  justify-self: space-between;
+}
+
+.page_header ion-title{
+  height: auto;
+    color: white;
+    font-size: 26px;
+    font-weight: bolder;
+    letter-spacing: 0.1cap;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+}
+.rounded_div{
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: 10px;
+  padding: 30px;
+  
+}
+
+.profile_img{
+  border: #1abfd8 3px groove;
+  background-color: white;
+  
+}
+
+
+.justify_center{
+ 
+  margin-top: 20px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+margin-left: 25%;
+}
+
+.justify_center ion-avatar{
+  height: 130px;
+  width: 130px;
+}
+
+.justify_center ion-text{
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+}
+
+.explore_content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+  margin-top: 200px;
+  padding: 20px;
+  margin-bottom: 70px;
+ 
+  
+  
+}
+
+
