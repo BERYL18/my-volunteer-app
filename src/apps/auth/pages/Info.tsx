@@ -42,7 +42,7 @@ const Info = () => {
         </div>
         <IonItem lines="none" style={{padding:"20px"} }>
         
-          <IonText color='medium'> <IonText color='warning'>ConekDem</IonText>  is a bridge connecting individuals in search of meaningful volunteering opportunities to Organizations in search of passionate volunteers for their projects.  </IonText>
+          <IonText color='medium'> <IonText color='warning'>ConekDem</IonText>  is a bridge connecting individuals in search of meaningful volunteering opportunities to Organizations in search of passionate voluteers for their projects.  </IonText>
         </IonItem>
 
 

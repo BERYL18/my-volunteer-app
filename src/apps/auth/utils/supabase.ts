@@ -30,6 +30,9 @@ Supabase.signIn =async (email: string, password: string) => {
     })
 
     console.log({data: data, error: error})
+    if (data.user) {
+        localStorage.setItem('user', JSON.stringify(data.user));
+    }
     return data.user.id
 }
 

@@ -1,55 +1,47 @@
-import { IonAlert, IonAvatar, IonButton, IonContent, IonHeader, IonIcon, IonItem, IonPage, IonText, IonTitle } from '@ionic/react'
-import { Avatar, Button, Card, Space, Typography } from 'antd'
-import React, { useEffect, useState } from 'react'
+import { IonAlert, IonAvatar, IonButton, IonContent, IonIcon, IonItem, IonPage, IonSpinner, IonText } from '@ionic/react'
+import { Avatar, Button, Card, Space } from 'antd'
+import { useEffect, useState } from 'react'
 import { CommentOutlined, HeartOutlined } from '@ant-design/icons';
 import Meta from 'antd/es/card/Meta';
 import { pencilOutline } from 'ionicons/icons';
-import supabase from '../../auth/utils/supabase';
 import post from '../../../helpers/axios';
 
 
 
 
 const Profile = () => {
-  const [profile, setProfile] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-
-
-//   useEffect(() => {
-//     const fetchProfile = async () => {
-//         setLoading(true);
-//         const user = supabase.auth.user();
-//         if (user) {
-//             try {
-               
-//                 let { data: profileData, error } = await supabase
-//                     .from('profiles')
-//                     .select('*')
-//                     .eq('id', user.id)
-//                     .single();
-
-//                 if (error) {
-//                     console.error('Error fetching profile:', error);
-//                 } else {
-//                     setProfile(profileData);
-//                 }
-//             } catch (error) {
-//                 console.error('Error:', error);
-//             }
-//         }
-//         setLoading(false);
-//     };
-
-//     fetchProfile();
-// }, []);
-// if (loading) return <div>Loading...</div>;
-// if (!profile) return <div>No profile data</div>;
-
   
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<any>(null);
+
+      useEffect(() => {
+      const fetchUser = async () => {
+          try {
+              const userData = JSON.parse(localStorage.getItem('user') || '{}');
+                 
+              if (userData.id) {
+                  const response = await post.get(`user/${userData.id}`);
+                  if (response.data) {
+                      setUser(response.data);
+                     
+                  }
+              }
+          } catch (error) {
+              console.error('Error fetching user data:', error);
+          }
+      };
+
+      fetchUser();
+      setLoading(false);
+  }, []);
+
+  if (!user) {
+      return <div><IonSpinner color='new'></IonSpinner></div>;
+
+  }
   
     
-  const { Paragraph } = Typography;
-  const [editableStr, setEditableStr] = useState('Enter your bio here');
+  
   const [showAlert, setShowAlert] = useState(false);
   return (
 <IonPage>
@@ -85,7 +77,7 @@ const Profile = () => {
       </IonAvatar>
       </IonItem>
     <IonItem lines='none'>
-      <IonText>User Name</IonText>
+      <IonText>{user.username}</IonText>
     </IonItem>
       </Space>
   </div>
@@ -95,10 +87,13 @@ const Profile = () => {
     
       <Space direction='vertical' size='large' >
 
-       <Paragraph style={{
-        paddingLeft:'5rem', fontSize:'15px', width:'100%',
-       }} editable={{ onChange: setEditableStr }}>{editableStr}</Paragraph>
-      
+      <IonItem>
+      <IonText>{user.email}</IonText>
+    </IonItem>
+
+    <IonItem>
+      <IonText>{user.description}</IonText>
+    </IonItem>
 
 
        

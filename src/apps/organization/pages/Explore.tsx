@@ -14,9 +14,12 @@ import { useState, useEffect } from "react";
 import { Space, Card, Button, Avatar, FloatButton } from "antd";
 import Meta from "antd/es/card/Meta";
 import { CommentOutlined, HeartOutlined } from '@ant-design/icons';
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 
 const Explore = () => {
+  const { posts } = useSelector((state: RootState) => state.auth);
   const history = useHistory();
  
   const [showAlert, setShowAlert] = useState(false);
@@ -60,9 +63,20 @@ const Explore = () => {
         </div>
 
       </IonHeader>
+
+
         <div className="explore_content">
           <Space direction="vertical" size='middle'>
 
+          <div>
+      {posts.map((post) => (
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
+          <img src={post.image} alt={post.title} />
+        </div>
+      ))}
+    </div>
                 <Card
                 style={{ width: 380 }}
                 cover={
